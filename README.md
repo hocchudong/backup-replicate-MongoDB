@@ -7,7 +7,8 @@ Tạo bản sao lưu dữ liệu:
 ```sh
 mongodump --host mongodb.example.net --port 27017
 ```
- <img src=http://i.imgur.com/pvu8kCG.png width="60%" height="60%" border="1">
+ <img src=http://i.imgur.com/pvu8kCG.png width="80%" height="80%" border="1">
+ 
 Trong câu lệnh mongodb.example.net là máy server chứa database MongoDB. Bản sao dữ liệu sẽ được sinh ngay tại thư mục hiện tại, để lưu bản sao về thư mục định nghĩa trước ta thêm tham số –out như sau
 ```sh
 mongodump --host mongodb.example.net --port 27017 –out /data/backup
@@ -50,9 +51,10 @@ Script trên sẽ xóa dữ liệu trong database một ngày trước
  
 
 Dữ liệu trước khi xóa:
+  <img src=http://i.imgur.com/bmX6ctW.png width="80%" height="80%" border="1">
  
 Dữ liệu sau khi xóa:
- 
+ <img src=http://i.imgur.com/sUuRCxd.png width="80%" height="80%" border="1">
 
 ### 1.2 Di chuyển dữ liệu
 Trong hệ thống Ceilometer được cài trên các node của OpenStack databaseđược
@@ -76,7 +78,7 @@ Khởi động lại dịchvụ
 
 Mô hình :
 
-
+<img src=http://i.imgur.com/hr9Zid3.png width="80%" height="80%" border="1">
  
 Bước 1: Cài đặt Mongo trên các node primary, secondary1, secondary2
 Bước 2: Chỉnh sửa file cấu hình /etc/mongodb.conf trên từng node. Ta có thể chỉnh sửa port và tên của replica, tất cả các node cùng tên replica. Nội dung file cấu hình:
@@ -113,16 +115,19 @@ Kiểm tra trạng thái
 ```sh
 Rs.status()
 ```
- 
+<img src=http://i.imgur.com/VlmUeIF.png width="80%" height="80%" border="1">
+
 Kiểm tra từng máy và sự đồng bộ database
 - Node primary
  
+<img src=http://i.imgur.com/SFNp88z.png width="80%" height="80%" border="1">
 
 Tạo mới database:
-
+<img src=http://i.imgur.com/vbmF5Q4.png width="80%" height="80%" border="1">
  
 - Node secondary
  
+<img src=http://i.imgur.com/PtDQyiB.png width="80%" height="80%" border="1">
 
 Ta thấy dữ liệu đã được đồng bộ từ máy primary sang các máy secondary. Các máy secondary không có quyền tạo database mới và khi máy primary hỏng thì một trong các máy secondary sẽ lên thay thế
 
