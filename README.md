@@ -7,7 +7,7 @@ Tạo bản sao lưu dữ liệu:
 ```sh
 mongodump --host mongodb.example.net --port 27017
 ```
- 
+ <img src=http://i.imgur.com/pvu8kCG.png width="60%" height="60%" border="1">
 Trong câu lệnh mongodb.example.net là máy server chứa database MongoDB. Bản sao dữ liệu sẽ được sinh ngay tại thư mục hiện tại, để lưu bản sao về thư mục định nghĩa trước ta thêm tham số –out như sau
 ```sh
 mongodump --host mongodb.example.net --port 27017 –out /data/backup
@@ -62,9 +62,11 @@ Bước 2: Chuyển bản sao sang máy chứa dữ liệu
 Bước 3: Sử dụng mongorestore để khôi phục dữ liệu đang có lên máy mới
 Bước 4: Sửa file cấu hình /etc/ceilometer/ceilometer.conf  kết nối database vào sever mới
 [database]
+```sh
 # The SQLAlchemy connection string used to connect to the
 # database (string value)
 connection = mongodb://ceilometer:passdb@server_new_ip:27017/ceilometer
+```
 Khởi động lại dịchvụ
 
 ##1.3 Tạo bản sao dữ liệu với Replica Set
