@@ -59,12 +59,16 @@ Dữ liệu sau khi xóa:
 ### 1.2 Di chuyển dữ liệu
 Trong hệ thống Ceilometer được cài trên các node của OpenStack databaseđược
 lưu tại node controller, controller vừa lưu trữ dữ liệu vừa xử lý tác vụ dẫn đến chậm, giảm tính sẵn sàng của hệ thống, vì vậy cần có giải pháp tách riêng database Ceilometer thu thập được sang một server mới. Để làm được việc này ta cần thực hiện các bước sau
+
 Bước 1: Sử dụng mongodump  để tạo bản sao dữ liệu
+
 Bước 2: Chuyển bản sao sang máy chứa dữ liệu
+
 Bước 3: Sử dụng mongorestore để khôi phục dữ liệu đang có lên máy mới
+
 Bước 4: Sửa file cấu hình /etc/ceilometer/ceilometer.conf  kết nối database vào sever mới
-[database]
 ```sh
+[database]
 # The SQLAlchemy connection string used to connect to the
 # database (string value)
 connection = mongodb://ceilometer:passdb@server_new_ip:27017/ceilometer
@@ -81,6 +85,7 @@ Mô hình :
 <img src=http://i.imgur.com/hr9Zid3.png width="80%" height="80%" border="1">
  
 Bước 1: Cài đặt Mongo trên các node primary, secondary1, secondary2
+
 Bước 2: Chỉnh sửa file cấu hình /etc/mongodb.conf trên từng node. Ta có thể chỉnh sửa port và tên của replica, tất cả các node cùng tên replica. Nội dung file cấu hình:
 ```sh
 dbpath=/var/lib/mongodb
