@@ -7,6 +7,7 @@ Tạo bản sao lưu dữ liệu:
 ```sh
 mongodump --host mongodb.example.net --port 27017
 ```
+ 
  <img src=http://i.imgur.com/pvu8kCG.png width="80%" height="80%" border="1">
  
 Trong câu lệnh mongodb.example.net là máy server chứa database MongoDB. Bản sao dữ liệu sẽ được sinh ngay tại thư mục hiện tại, để lưu bản sao về thư mục định nghĩa trước ta thêm tham số –out như sau
@@ -51,9 +52,11 @@ Script trên sẽ xóa dữ liệu trong database một ngày trước
  
 
 Dữ liệu trước khi xóa:
+
   <img src=http://i.imgur.com/bmX6ctW.png width="80%" height="80%" border="1">
  
 Dữ liệu sau khi xóa:
+
  <img src=http://i.imgur.com/sUuRCxd.png width="80%" height="80%" border="1">
 
 ### 1.2 Di chuyển dữ liệu
@@ -128,6 +131,7 @@ Kiểm tra từng máy và sự đồng bộ database
 <img src=http://i.imgur.com/SFNp88z.png width="80%" height="80%" border="1">
 
 Tạo mới database:
+
 <img src=http://i.imgur.com/vbmF5Q4.png width="80%" height="80%" border="1">
  
 - Node secondary
